@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     datosForm()
     colorAleatorios()
+    generarColoresRGB()
 
 })
 
@@ -52,16 +53,12 @@ function generarColorHexa() {
 //Funcion para obtener colores RGB
 function generarColoresRGB() {
 
-    let colors = []
-
+    let rgb = ''
     for (let i = 0; i < 3; i++) {
-        let rgb = Math.floor(Math.random() * 255)
+        rgb += Math.floor(Math.random() * 255) + ','
 
-        //Se guarda las convinaciones en un arreglo
-        colors = [...colors, rgb]
     }
-
-    return colors
+   return rgb = rgb.slice(0, -1)
 }
 
 
@@ -73,44 +70,46 @@ function colorAleatorios(tipo, cantidad) {
 
     let colores = []
 
+    console.log(tipo)
+
     for (let i = 0; i < cantidad; i++) {
 
         if (tipo === "Hexa") {
             colores = [...colores, generarColorHexa()]
-        } else if (tipo === "RGB") {
+        }else{
             colores = [...colores, generarColoresRGB()]
         }
 
-    }
+    }  
 
-    insersionHtml(colores)
-
-
+    insersionHtml(colores, tipo)
 }
 
 
-//Funcion de para insertar los colores en el html
-function insersionHtml(colores) {
+//Funcion para insertar los colores en el html
+function insersionHtml(colores,tipo) {
 
     //se valida que el arreglo teng algo
     if (colores.length) {
 
         // se insertan los colores
+
+        console.log(colores)
         paleta.innerHTML = `
-            <h3>Paltea de colores</h3>
+            <h3>Paleta de colores ${tipo}</h3>
 
             <div class="contenedor-paleta">
                 ${colores.map(color => `
-                    <div style="background-color: ${color}; padding: 2rem;">
+                    <div class="color-paleta" style="background-color:${tipo === "RGB" ? `rgb(${color})` : color}; padding: 2rem;">
 
                     </div>         
        
                  `).join('')}
             </div>
         
-        `     
-    }else{
-         paleta.innerHTML= `
+        `
+    } else {
+        paleta.innerHTML = `
             <h2 class="paleta-titulo">Escoge el tipo de los colores y el tamaño</h2>
          
          `
