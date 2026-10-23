@@ -117,12 +117,18 @@ a {
     font-weight: 700;
 }
 
-.input-main{
+.select-main{
     border: none;
     border: solid 1px var(--gris);
     padding: 1rem;
     width: 100%;
     border-radius: .5rem;
+}
+
+.contenedor-radio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .boton-submit{
@@ -142,3 +148,4 @@ a {
 .boton-submit:hover{
     background-color: var(--negro-claro);
 }
+
