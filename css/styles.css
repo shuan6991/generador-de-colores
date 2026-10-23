@@ -1,0 +1,127 @@
+/*Variables*/
+:root {
+    --fuente-principal: "Black Ops One", system-ui;
+    --fuente-secundaria: "Roboto Condensed", sans-serif;
+
+    --morado: #531363;
+    --morado-claro: #A844C2;
+    --blanco: #ffffff;
+    --gris: #F0F0F0;
+    --negro: #262626;
+    --negro-claro: #424242;
+}
+
+/* Reset Basico */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+/*Globales*/
+
+body {
+    line-height: 1.5;
+    font-size: 1.6rem;
+    background-color: var(--morado-claro);
+    font-family: var(--fuente-secundaria);
+}
+
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4.2rem;
+}
+
+p,
+label {
+    font-size: 1.8rem;
+}
+
+
+a {
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+
+/* Header */
+
+.header {
+    background-color: var(--morado);
+    padding: 1rem 0;
+}
+
+.header-title {
+    text-align: center;
+    font-family: var(--fuente-principal);
+    color: var(--blanco);
+    font-weight: 900;
+}
+
+/* Main */
+
+.main {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.contenedor-main{
+    padding: 5rem;
+    background-color: var(--blanco);
+    border-radius: 1rem;
+}
+
+.main-title {
+    text-align: center;
+}
+
+.botones-main{
+    
+    display: flex;
+    gap: 1rem;
+
+}
+
+/*Botones */
+
+.boton{
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.boton:hover{
+    background-color: var(--negro-claro);
+}
