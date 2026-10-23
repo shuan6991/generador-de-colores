@@ -97,7 +97,7 @@ function insersionHtml(colores) {
 
         // se insertan los colores
         paleta.innerHTML = `
-            <h2 class="paleta-titulo">Paltea de colores</h2>
+            <h3>Paltea de colores</h3>
 
             <div class="contenedor-paleta">
                 ${colores.map(color => `
@@ -109,6 +109,11 @@ function insersionHtml(colores) {
             </div>
         
         `     
+    }else{
+         paleta.innerHTML= `
+            <h2 class="paleta-titulo">Escoge el tipo de los colores y el tamaño</h2>
+         
+         `
     }
 }
 
