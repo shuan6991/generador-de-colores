@@ -25,16 +25,27 @@
     </header>
 
     <main class="main contenedor">
-        <div class="contenedor-main">
+        <div class="contenefor-form">
             <h2 class="main-title">Elige Tu diseño</h2>
 
-            <div class="botones-main">
-                <button class="boton">6 Colores</button>
-                <button class="boton">8 Colores</button>
-                <button class="boton">9 Colores</button>
-            </div>
+            <form class="form-main" action="">
+
+                <fieldset class="fieldset-form">
+                    <legend>Paleta de colores</legend>
+
+                    <label class="label-main" id="cantidad" for="">Tamaño de paleta:</label>
+                    <input class="input-main" type="number" placeholder="Tamaño de paleta de colores ej: 6,8 o 9 "
+                        id="cantidad" name="cantidad">
+                </fieldset>
+
+                <input class="boton-submit" type="submit" value="Generar paleta">
+
+            </form>
         </div>
+
+
     </main>
+
 
     <script src="js/js.js"></script>
 </body>
