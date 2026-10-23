@@ -1,18 +1,33 @@
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () => {
+
 
 })
 
+function generarColorHexa() {
 
-const hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B" ,"C" , "D", "E", "F"]
+    const hexa = "0123456789ABCDEF"
 
-function generarColores(){
-  const color= []
-    for(let i= 0; i< 6; i++){
-       color = [Math.floor(Math.random(hexa)* 16)]
+    let color = "#"
+
+    for (let i = 0; i < 6; i++) {
+        color += hexa[Math.floor(Math.random(hexa) * 16)]
     }
 
     return color
 }
 
 
-console.log(generarColores())
+
+function colorAleatorios(){
+
+    let colors = []
+
+    for(let i=0; i<9; i++ ){
+       colors = [...colors, generarColorHexa()]
+    }    
+    
+    return colors
+}
+
+
+console.log(colorAleatorios())
