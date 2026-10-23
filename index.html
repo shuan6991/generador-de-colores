@@ -36,9 +36,9 @@
 
                     <label class="label-main" id="tipo" for="">Tipo de paleta:</label>
                     <select class="select-main" name="tipo" id="tipo">
-                        <option value="">Hexa</option>
-                        <option value="">HSL</option>
-                        <option value="">RGB</option>
+                        <option value="Hexa">Hexa</option>
+                        <option value="HSL">HSL</option>
+                        <option value="RGB">RGB</option>
                     </select>
 
                     <label class="label-main" for="tamaño">Tamaño:</label>
@@ -46,17 +46,17 @@
                     <div class="contenedor-radio">
 
                         <div>
-                            <input type="radio" name="cantidad" value="6">
-                            <label for="cantidad">6 colores</label>
+                            <input type="radio" name="cantidad" id="6" value="6">
+                            <label for="6">6 colores</label>
                         </div>
 
                         <div>
-                            <input type="radio" name="cantidad" value="8">
-                            <label for="cantidad">8 colores</label>
+                            <input type="radio" name="cantidad" id="8" value="8">
+                            <label for="8">8 colores</label>
                         </div>
                         <div>
-                            <input type="radio" name="cantidad" value="9">
-                            <label for="cantidad">9 colores</label>
+                            <input type="radio" name="cantidad" id="9" value="9">
+                            <label for="9">9 colores</label>
                         </div>
                     </div>
                 </fieldset>
@@ -65,6 +65,11 @@
 
             </form>
         </div>
+
+
+        <section class="paleta-colores">
+
+        </section>
     </main>
 
     <script src="js/js.js"></script>

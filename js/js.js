@@ -2,6 +2,7 @@
 
 const boton = document.querySelector('.boton-submit')
 const form = document.querySelector('.form-main')
+const paleta = document.querySelector('.paleta-colores')
 
 
 //Evento del DOM
@@ -70,26 +71,45 @@ function generarColoresRGB() {
 
 function colorAleatorios(tipo, cantidad) {
 
-    let colores = []   
+    let colores = []
 
     for (let i = 0; i < cantidad; i++) {
 
-        if (tipo === "Hexa") {         
-            colores = [...colores, generarColorHexa()]          
-        } else if(tipo === "RGB"){
+        if (tipo === "Hexa") {
+            colores = [...colores, generarColorHexa()]
+        } else if (tipo === "RGB") {
             colores = [...colores, generarColoresRGB()]
         }
 
     }
 
-      console.log(colores)
+    insersionHtml(colores)
 
-   
+
 }
 
 
-function insersionHtml(){
-    
+//Funcion de para insertar los colores en el html
+function insersionHtml(colores) {
+
+    //se valida que el arreglo teng algo
+    if (colores.length) {
+
+        // se insertan los colores
+        paleta.innerHTML = `
+            <h2 class="paleta-titulo">Paltea de colores</h2>
+
+            <div class="contenedor-paleta">
+                ${colores.map(color => `
+                    <div style="background-color: ${color}; padding: 2rem;">
+
+                    </div>         
+       
+                 `).join('')}
+            </div>
+        
+        `     
+    }
 }
 
 
