@@ -31,11 +31,32 @@
             <form class="form-main" action="">
 
                 <fieldset class="fieldset-form">
+
                     <legend>Paleta de colores</legend>
 
-                    <label class="label-main" id="cantidad" for="">Tamaño de paleta:</label>
-                    <input class="input-main" type="number" placeholder="Tamaño de paleta de colores ej: 6,8 o 9 "
-                        id="cantidad" name="cantidad">
+                    <label class="label-main" id="tipo" for="">Tamaño de paleta:</label>
+                    <select class="select-main" name="tipo" id="tipo">
+                        <option value="">Hexa</option>
+                        <option value="">HSL</option>
+                        <option value="">RGB</option>
+                    </select>
+
+                    <label class="label-main" for="tamaño">Tamaño:</label>
+
+                    <div class="contenedor-radio">
+                        <input type="radio">
+                        <label for="">6 colores</label>
+
+                        <input type="radio">
+                        <label for="">8 colores</label>
+
+                        <input type="radio">
+                        <label for="">9 colores</label>
+                    </div>
+
+
+
+
                 </fieldset>
 
                 <input class="boton-submit" type="submit" value="Generar paleta">
