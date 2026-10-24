@@ -62,6 +62,7 @@ a {
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
+    width: 95%;
 }
 
 
@@ -90,7 +91,7 @@ a {
 }
 
 .contenefor-form {
-    width: 50%;
+    width: 100%;
     background-color: var(--blanco);
     padding: 5rem;
     border-radius: 1rem;
@@ -105,20 +106,28 @@ a {
 .form-main {
     margin-top: 1rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .fieldset-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    width: 100%;
+    gap: 3rem;
+    width: 90%;
 }
 
-.label-main{
+.contenido-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.label-main {
     font-weight: 700;
 }
 
-.select-main{
+.select-main {
     border: none;
     border: solid 1px var(--gris);
     padding: 1rem;
@@ -126,15 +135,15 @@ a {
     border-radius: .5rem;
 }
 
-.contenedor-radio{
+.contenedor-radio {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.boton-submit{
+.boton-submit {
     margin-top: 2rem;
-    width: 100%;
+    width: 90%;
     padding: 1rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -146,33 +155,52 @@ a {
     cursor: pointer;
 }
 
-.boton-submit:hover{
+.boton-submit:hover {
     background-color: var(--negro-claro);
 }
 
 /* Seccion paleta de colores */
 
-.paleta-colores{
+.paleta-colores {
     margin: 3rem 0;
     background-color: var(--blanco);
     padding: 2rem;
-    width: 50%;
+    width: 100%;
     border-radius: 2rem;
 }
 
-.paleta-titulo{
+.paleta-titulo {
     text-align: center;
     font-size: 3rem;
 }
 
-.contenedor-paleta{
+.contenedor-paleta {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.color-paleta{
+.color-paleta {
     flex: 1;
-    height: 7rem;
+    height: 20rem;
     border: solid 1px var(--negro-claro);
+    position: relative;
+}
+
+.nombre-color {
+    position: absolute;
+    font-size: 1.4rem;
+    left: 5px;
+    bottom: 1px;
+    background-color: var(--gris);
+    padding: 5px;
+    border-radius: 5px;
+    transition: all ease-in .5S;
+    
+}
+
+.nombre-color:hover {
+    background-color: var(--negro-claro);
+    color: var(--blanco);
+
 }
