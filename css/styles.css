@@ -79,6 +79,7 @@ a {
     font-size: 1.8rem;
     border-radius: .5rem;
     cursor: pointer;
+    transition: all ease-in .5s;
 }
 
 .boton-submit:hover {
