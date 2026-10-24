@@ -3,6 +3,7 @@
 const boton = document.querySelector('.boton-submit')
 const form = document.querySelector('.form-main')
 const paleta = document.querySelector('.paleta-colores')
+const body = document.querySelector('body')
 
 
 
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     datosForm()
     colorAleatorios()
     generarColoresRGB()
-    copiarPapeles()
+
 })
 
 
@@ -152,13 +153,22 @@ function insersionHtml(colores, tipo) {
 }
 
 
-
 async function copiarPapeles(nombreColor) {
+
+    const mensaje = document.createElement('P')
 
     try {
         await navigator.clipboard.writeText(nombreColor)
-        console.log('texto copiado correctamente')
 
+        mensaje.classList.add('mensaje')
+        mensaje.textContent = 'Copiado en el portapapeles'
+        body.appendChild(mensaje)
+
+        setTimeout(()=>{        
+            body.removeChild(mensaje)
+        }, 3000)
+
+  
     } catch (error) {
         console.error('error al copiar el color')
     }
