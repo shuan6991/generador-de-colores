@@ -62,6 +62,19 @@ function generarColoresRGB() {
 }
 
 
+function generarColoresHSL(){
+    let h = Math.floor(Math.random()*360);
+    let s = Math.floor(Math.random()*100);
+    let l = Math.floor(Math.random()*100);
+
+    let hsl = `${h}, ${s}%, ${l}%`
+
+    return hsl
+
+
+}
+
+
 
 
 //Funcion para generar los colores deacuerdo a la cantidad y el tipo seleccionado
@@ -70,17 +83,19 @@ function colorAleatorios(tipo, cantidad) {
 
     let colores = []
 
-    console.log(tipo)
-
     for (let i = 0; i < cantidad; i++) {
 
         if (tipo === "Hexa") {
             colores = [...colores, generarColorHexa()]
-        }else{
+        }else if(tipo === "RGB"){
             colores = [...colores, generarColoresRGB()]
+        }else{
+            colores = [...colores, generarColoresHSL()]
         }
 
     }  
+
+
 
     insersionHtml(colores, tipo)
 }
@@ -99,12 +114,22 @@ function insersionHtml(colores,tipo) {
             <h3>Paleta de colores ${tipo}</h3>
 
             <div class="contenedor-paleta">
-                ${colores.map(color => `
-                    <div class="color-paleta" style="background-color:${tipo === "RGB" ? `rgb(${color})` : color}; padding: 2rem;">
+                ${colores.map(color =>  {    
+                    
+                    let formatoColor = color
 
+                    if(tipo === 'RGB'){
+                        formatoColor = `rgb(${color})`
+                    }else if(tipo === "HSL"){
+                        formatoColor = `hsl(${color})`
+                    }
+                    
+                   return `                  
+                    <div class="color-paleta" style="background-color: ${formatoColor} ; padding: 2rem;">
+                        <p class='nombre-color'>${color}</p>
                     </div>         
        
-                 `).join('')}
+                 `}).join('')}
             </div>
         
         `
