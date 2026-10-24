@@ -20,22 +20,23 @@
 
 <body>
 
-    <header class="header">
+    <header class="header"><!-- Inicio del header -->
         <h1 class="header-title">Chromatik Color</h1>
-    </header>
+    </header><!-- Fin del header -->
 
-    <main class="main contenedor">
+    <main class="main contenedor"><!-- Inicio del main -->
         <div class="contenefor-form">
             <h2 class="main-title">Elige Tu diseño</h2>
 
-            <form class="form-main" action="">
+            <form class="form-main" action=""><!-- Formulario principal de la paleta -->
 
                 <fieldset class="fieldset-form">
 
                     <legend>Paleta de colores</legend>
 
-                    <div class="contenido-form">
-                        <label class="label-main" id="tipo" for="">Tipo de paleta:</label>
+                    <div class="contenido-form"><!--Selección de tipo de color-->
+
+                        <label class="label-main" for="tipo">Tipo de paleta:</label>
                         <select class="select-main" name="tipo" id="tipo">
                             <option value="Hexa">Hexa</option>
                             <option value="HSL">HSL</option>
@@ -46,7 +47,7 @@
 
                     <label class="label-main" for="tamaño">Tamaño:</label>
 
-                    <div class="contenedor-radio">
+                    <div class="contenedor-radio"><!--Seleccion de tamaño de paleta de colores-->
 
                         <div>
                             <input type="radio" name="cantidad" id="6" value="6">
@@ -66,12 +67,12 @@
 
                 <input class="boton-submit" type="submit" value="Generar paleta">
 
-            </form>
+            </form><!--Fin formulrio paleta de colores-->
         </div>
 
 
         <section class="paleta-colores"></section>
-    </main>
+    </main><!-- Fin del main -->
 
     <script src="js/js.js"></script>
 </body>
