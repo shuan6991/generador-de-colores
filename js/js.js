@@ -97,8 +97,6 @@ function colorAleatorios(tipo, cantidad) {
 
     }
 
-
-
     insersionHtml(colores, tipo)
 }
 
@@ -111,7 +109,6 @@ function insersionHtml(colores, tipo) {
 
         // se insertan los colores
 
-        console.log(colores)
         paleta.innerHTML = `
             <h3>Paleta de colores ${tipo}</h3>
 
@@ -164,11 +161,11 @@ async function copiarPapeles(nombreColor) {
         mensaje.textContent = 'Copiado en el portapapeles'
         body.appendChild(mensaje)
 
-        setTimeout(()=>{        
+        setTimeout(() => {
             body.removeChild(mensaje)
         }, 3000)
 
-  
+
     } catch (error) {
         console.error('error al copiar el color')
     }
