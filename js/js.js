@@ -5,6 +5,7 @@ const form = document.querySelector('.form-main')
 const paleta = document.querySelector('.paleta-colores')
 
 
+
 //Evento del DOM
 document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     datosForm()
     colorAleatorios()
     generarColoresRGB()
-
+    copiarPapeles()
 })
 
 
@@ -58,14 +59,14 @@ function generarColoresRGB() {
         rgb += Math.floor(Math.random() * 255) + ','
 
     }
-   return rgb = rgb.slice(0, -1)
+    return rgb = rgb.slice(0, -1)
 }
 
 
-function generarColoresHSL(){
-    let h = Math.floor(Math.random()*360);
-    let s = Math.floor(Math.random()*100);
-    let l = Math.floor(Math.random()*100);
+function generarColoresHSL() {
+    let h = Math.floor(Math.random() * 360);
+    let s = Math.floor(Math.random() * 100);
+    let l = Math.floor(Math.random() * 100);
 
     let hsl = `${h}, ${s}%, ${l}%`
 
@@ -87,13 +88,13 @@ function colorAleatorios(tipo, cantidad) {
 
         if (tipo === "Hexa") {
             colores = [...colores, generarColorHexa()]
-        }else if(tipo === "RGB"){
+        } else if (tipo === "RGB") {
             colores = [...colores, generarColoresRGB()]
-        }else{
+        } else {
             colores = [...colores, generarColoresHSL()]
         }
 
-    }  
+    }
 
 
 
@@ -102,7 +103,7 @@ function colorAleatorios(tipo, cantidad) {
 
 
 //Funcion para insertar los colores en el html
-function insersionHtml(colores,tipo) {
+function insersionHtml(colores, tipo) {
 
     //se valida que el arreglo teng algo
     if (colores.length) {
@@ -114,17 +115,17 @@ function insersionHtml(colores,tipo) {
             <h3>Paleta de colores ${tipo}</h3>
 
             <div class="contenedor-paleta">
-                ${colores.map(color =>  {    
-                    
-                    let formatoColor = color
+                ${colores.map(color => {
 
-                    if(tipo === 'RGB'){
-                        formatoColor = `rgb(${color})`
-                    }else if(tipo === "HSL"){
-                        formatoColor = `hsl(${color})`
-                    }
-                    
-                   return `                  
+            let formatoColor = color
+
+            if (tipo === 'RGB') {
+                formatoColor = `rgb(${color})`
+            } else if (tipo === "HSL") {
+                formatoColor = `hsl(${color})`
+            }
+
+            return `                  
                     <div class="color-paleta" style="background-color: ${formatoColor} ; padding: 2rem;">
                         <p class='nombre-color'>${color}</p>
                     </div>         
@@ -133,6 +134,15 @@ function insersionHtml(colores,tipo) {
             </div>
         
         `
+        const nombreColor = document.querySelectorAll(".nombre-color")
+
+        nombreColor.forEach(nombre => {
+            nombre.addEventListener('click', () => {
+                copiarPapeles(nombre.textContent)
+            })
+        })
+
+
     } else {
         paleta.innerHTML = `
             <h2 class="paleta-titulo">Escoge el tipo de los colores y el tamaño</h2>
@@ -141,4 +151,16 @@ function insersionHtml(colores,tipo) {
     }
 }
 
+
+
+async function copiarPapeles(nombreColor) {
+
+    try {
+        await navigator.clipboard.writeText(nombreColor)
+        console.log('texto copiado correctamente')
+
+    } catch (error) {
+        console.error('error al copiar el color')
+    }
+}
 
